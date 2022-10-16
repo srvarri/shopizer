@@ -1,9 +1,10 @@
 pipeline {
     agent { label 'jdk11' }
+     triggers { pollSCM('* * * * *') }
     stages {
         stage('vcs') {
             steps {
-                git branch: 'sprint-1-dev', url:'https://github.com/srvarri/shopizer.git'
+                git branch: 'develop', url:'https://github.com/srvarri/shopizer.git'
             }
 
         }
