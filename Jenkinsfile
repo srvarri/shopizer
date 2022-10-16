@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'jdk11' }
-     triggers { pollSCM('* * * * *') }
+     triggers { cron('30 5 * * *') }
     stages {
         stage('vcs') {
             steps {
